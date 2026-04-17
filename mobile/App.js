@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: center,
+    alignItems: 'center',
     padding: 20,
     marginTop: 10,
   },
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   content: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: center,
+    alignItems: 'center',
     padding: 20,
   },
   timerContainer: {
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   controls: {
     width: '100%',
-    alignItems: center,
+    alignItems: 'center',
     gap: 20,
   },
   mainButton: {
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    alignItems: center,
+    alignItems: 'center',
   },
   footerText: {
     color: '#475569',
