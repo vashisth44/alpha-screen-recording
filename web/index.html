@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen Recorder Pro</title>
+    <!-- Google Fonts for sleek typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <div class="logo">
+           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.6 11.6L22 7v10l-6.4-4.5v-1zM4 5h9a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7c0-1.1.9-2 2-2z"/></svg>
+           <span>Recordify</span>
+        </div>
+        <div class="status-badge" id="status-badge">Idle</div>
+      </header>
+
+      <main>
+        <div class="preview-container">
+          <video id="preview" autoplay muted playsinline></video>
+          <div class="empty-state" id="empty-state">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect><line x1="7" y1="2" x2="7" y2="22"></line><line x1="17" y1="2" x2="17" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="2" y1="7" x2="7" y2="7"></line><line x1="2" y1="17" x2="7" y2="17"></line><line x1="17" y1="17" x2="22" y2="17"></line><line x1="17" y1="7" x2="22" y2="7"></line></svg>
+            <p>Ready to capture your screen.</p>
+          </div>
+        </div>
+
+        <section class="controls-panel">
+          <div class="recording-details">
+            <div class="time" id="timer">00:00:00</div>
+            <div class="details-text" id="details-msg">Click start to choose screen to record.</div>
+          </div>
+          <div class="actions">
+            <button id="btn-start" class="btn primary">Start Recording</button>
+            <button id="btn-stop" class="btn danger" disabled>Stop</button>
+            <button id="btn-snapshot" class="btn secondary" disabled>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+              Snapshot
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <canvas id="snapshot-canvas" style="display: none;"></canvas>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
