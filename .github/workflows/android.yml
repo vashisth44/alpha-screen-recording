@@ -22,14 +22,12 @@ jobs:
       - name: Install Expo CLI
         run: npm install -g expo-cli
 
-      - name: Build APK (EAS)
+      - name: Build APK
         run: |
-          # Note: This theoretically requires an Expo account.
-          # For a direct APK build without account secrets, we would use prebuild + gradle.
-          npx expo prebuild --platform android
+          npx expo prebuild --platform android --no-install --non-interactive
           cd android
           chmod +x gradlew
-          ./gradlew assembleRelease
+          ./gradlew assembleRelease --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
