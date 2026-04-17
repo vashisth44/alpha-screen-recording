@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   timerContainer: {
-    alignItems: center,
+    alignItems: 'center',
     marginBottom: 60,
   },
   timerText: {
