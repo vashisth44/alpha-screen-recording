@@ -16,15 +16,21 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies
-        run: cd mobile && npm install
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
 
-      - name: Install Expo CLI
-        run: npm install -g expo-cli
+      - name: Install dependencies
+        run: |
+          cd mobile
+          npm install
 
       - name: Build APK
         run: |
           cd mobile
+          # Ensure expo-cli is available
           npx expo prebuild --platform android --no-install --non-interactive
           cd android
           chmod +x gradlew
@@ -34,4 +40,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: app-release
-          path: mobile/android/app/build/outputs/apk/release/app-release.apk
+          path: mobile/android/app/build/outputs/apk/release/*.apk
